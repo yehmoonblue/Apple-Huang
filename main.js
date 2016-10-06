@@ -31,7 +31,7 @@ function draw(){
 //製造城堡
 var isBuilding = false;
 var cursor = {};
-$( "#game-canvas" ).on( "click", function( event ){
+$( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
   isBuilding = true;
   }
@@ -49,3 +49,16 @@ y: event.offsetY
   
 setInterval(draw, 16);
 
+//判斷之間
+
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
+    if(     pointX >= targetX
+        &&  pointX <= targetX + targetWidth
+        &&  pointY >= targetY
+        &&  pointY <= targetY + targetHeight
+    ){
+        return true;
+    } else {
+        return false;
+    }
+}
