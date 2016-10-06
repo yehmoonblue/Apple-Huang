@@ -14,13 +14,12 @@ var enemy ={
   x: 115,
   y: 480-32
 };
-var width =10;
-var height =10;
+
 
 function draw(){
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(towerImg,500,432,width,height);
+  ctx.drawImage(towerImg,610,432,50,50);
 
 }
 setInterval(draw, 16);
