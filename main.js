@@ -9,7 +9,7 @@ bgImg.src = "images/mapwithwater.png";
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/rukia.gif";
 var enemy ={
-  x: 146,
+  x: 115,
   y: 480-32
 };
 
