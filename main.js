@@ -32,7 +32,7 @@ cursor = {
 x: event.offsetX,
 y: event.offsetY
 };
-}
+});
   
 setInterval(draw, 16);
-});
+
