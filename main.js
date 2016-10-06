@@ -9,7 +9,7 @@ bgImg.src = "images/map.png";
 
 
 function draw(){
-  ctx.drawImage(bgImg,20,20);
+  ctx.drawImage(bgImg,50,20);
 
 }
  setTimeout(draw,1000);
