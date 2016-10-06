@@ -22,10 +22,16 @@ function draw(){
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(towerImg,590,432,50,50);
+  ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
 
 }
-setInterval(draw, 16);
 
+var cursor = {};
 $( "#game-canvas" ).on( "mousemove", function( event ) {
-console.log( "x: " + event.offsetX + ", y: " + event.offsetY );
+cursor{
+x: event.offsetX
+y: event.offsetY
+}
+  
+setInterval(draw, 16);
 });
