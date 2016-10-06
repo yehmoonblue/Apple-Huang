@@ -17,16 +17,27 @@ var enemy ={
   y: 480-32
 };
 
-
+//畫畫
 function draw(){
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(towerImg,590,432,50,50);
+  if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
+  }
 
 }
 
+//製造城堡
+var isBuilding = false;
 var cursor = {};
+$( "#game-canvas" ).on( "click", function( event ){
+  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+  isBuilding = true;
+  }
+  isBuilding= false;
+});
+  
 $( "#game-canvas" ).on( "mousemove", function( event ) {
 cursor = {
 x: event.offsetX,
