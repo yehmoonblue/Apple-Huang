@@ -18,5 +18,4 @@ function draw(){
 ctx.drawImage(bgImg,0,0);
 
 }
-
-setTimeout( draw(), 1000);
+draw()
