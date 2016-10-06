@@ -11,7 +11,7 @@ enemyImg.src = "images/rukia.gif";
 var enemy ={
   x: 146,
   y: 480-32
-}
+};
 
 
 function draw(){
