@@ -19,7 +19,7 @@ var enemy ={
 function draw(){
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(towerImg,610,432,50,50);
+  ctx.drawImage(towerImg,590,432,50,50);
 
 }
 setInterval(draw, 16);
