@@ -16,7 +16,7 @@ var enemy ={
 
 function draw(){
   ctx.drawImage(bgImg,50,0);
-  ctx.drawImage(enemyImg,146,480-32);
+  ctx.drawImage(enemyImg,enemy.x,enemy.y);
 
 }
 setInterval(draw, 16);
