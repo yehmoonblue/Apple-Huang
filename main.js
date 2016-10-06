@@ -13,7 +13,7 @@ var enemyImg = document.createElement("img");
 enemyImg.src = "images/slime.gif";
 
 function draw(){
-  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(bgImg,20,20);
   ctx.drawImage(enemyImg, enemy.x, enemy.y);
 }
 
