@@ -9,7 +9,7 @@ bgImg.src = "images/mapwithwater.png";
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/rukia.gif";
 var towerImg = document.createElement("img");
-towerImg.src = "images/tower.png";
+towerImg.src = "images/tower-btn.png";
 var enemy ={
   x: 115,
   y: 480-32
@@ -19,7 +19,7 @@ var enemy ={
 function draw(){
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(towerImg,0,0);
+  ctx.drawImage(towerImg,500,432);
 
 }
 setInterval(draw, 16);
