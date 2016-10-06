@@ -12,5 +12,5 @@ function draw(){
   ctx.drawImage(bgImg,50,20);
 
 }
-setTimeout( draw, 1000);
+setInterval(draw, 16);
 
