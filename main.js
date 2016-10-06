@@ -5,7 +5,7 @@ var ctx = canvas.getContext("2d");
 
 
 var bgImg = document.createElement("img");
-bgImg.src = "images/map.png";
+bgImg.src = "images/mapwithwater.png";
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/rukia.gif";
 var enemy ={
