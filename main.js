@@ -35,7 +35,9 @@ $( "#game-canvas" ).on( "click", function( event ){
   if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
   isBuilding = true;
   }
+  else{
   isBuilding= false;
+  }
 });
   
 $( "#game-canvas" ).on( "mousemove", function( event ) {
