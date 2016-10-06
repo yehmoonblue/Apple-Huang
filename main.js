@@ -10,6 +10,8 @@ var enemyImg = document.createElement("img");
 enemyImg.src = "images/rukia.gif";
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
+var towerbuiltImg = document.createElement("img");
+towerbuiltImg.src = "images/tower.png";
 var enemy ={
   x: 115,
   y: 480-32
@@ -24,3 +26,6 @@ function draw(){
 }
 setInterval(draw, 16);
 
+$( "#game-canvas" ).on( "mousemove", function( event ) {
+console.log( "x: " + event.offsetX + ", y: " + event.offsetY );
+});
