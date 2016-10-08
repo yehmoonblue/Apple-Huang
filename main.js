@@ -25,7 +25,7 @@ function draw(){
   if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   }
-
+  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
 }
 
 //製造城堡
