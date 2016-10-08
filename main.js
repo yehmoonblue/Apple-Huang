@@ -22,7 +22,7 @@ var enemy ={
 //畫畫
 function draw(){
   ctx.drawImage(bgImg,50,0);
-  ctx.drawImage(enemyImg,move(enemy.x,enemy.speedx),move(enemy.y,enemy.speedy);
+  ctx.drawImage(enemyImg,move(enemy.x,enemy.speedx),move(enemy.y,enemy.speedy));
   ctx.drawImage(towerImg,590,432,50,50);
   if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
