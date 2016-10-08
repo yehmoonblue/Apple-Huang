@@ -1,7 +1,7 @@
 
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-
+var FPS = 60;
 
 
 var bgImg = document.createElement("img");
@@ -14,7 +14,9 @@ var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
 var enemy ={
   x: 115,
-  y: 480-32
+  y: 480-32,
+  speedx: 0,
+  speedy: -64
 };
 
 //畫畫
@@ -56,7 +58,7 @@ y: event.offsetY
 };
 });
   
-setInterval(draw, 16);
+setInterval(draw, 1000/FPS);
 
 //判斷之間
 
