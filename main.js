@@ -25,6 +25,7 @@ var enemy ={
 
 //畫畫
 function draw(){
+  enemy.move();
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(towerImg,590,432,50,50);
