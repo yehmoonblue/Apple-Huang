@@ -22,7 +22,7 @@ var enemy ={
 //畫畫
 function draw(){
   ctx.drawImage(bgImg,50,0);
-  ctx.drawImage(enemyImg,enemy.x,enemy.y);
+  ctx.drawImage(enemyImg,move(enemy.x,enemy.speedx),move(enemy.y,enemy.speedy);
   ctx.drawImage(towerImg,590,432,50,50);
   if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
@@ -59,6 +59,12 @@ y: event.offsetY
 });
   
 setInterval(draw, 1000/FPS);
+
+//移動
+function move(position,speed){
+position = position+speed;
+  return position;
+}
 
 //判斷之間
 
