@@ -18,8 +18,8 @@ var enemy ={
   speedx: 0,
   speedy: -64,
   move: function(){
-  this.x += speedx/FPS;
-  this.y += speedy/FPS;
+  this.x += this.speedx/FPS;
+  this.y += this.speedy/FPS;
   }
 };
 
