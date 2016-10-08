@@ -30,16 +30,24 @@ function draw(){
 
 //製造城堡
 var isBuilding = false;
+var tower={};
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
   isBuilding = true;
   }
+  else if(isBuilding){
+  tower.x =cursor.x
+  tower.y =cursor.y
+  }
   else{
   isBuilding= false;
   }
 });
-  
+
+
+
+
 $( "#game-canvas" ).on( "mousemove", function( event ) {
 cursor = {
 x: event.offsetX,
