@@ -8,4 +8,4 @@ function draw(){
 setInterval(draw,16);
 var rukia = document.createElement("img");
 rukia.src = "images/rukia.gif";
-setInterval(draw,16);
+draw();
