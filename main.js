@@ -7,5 +7,6 @@ function draw(){
 }
 setInterval(draw,16);
 var rukia = document.createElement("img");
+var ctx = canvas.getContext("2d");
 rukia.src = "images/rukia.gif";
 draw();
