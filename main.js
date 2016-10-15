@@ -5,4 +5,4 @@ var ctx = canvas.getContext("2d");
 function draw(){
 ctx.drawlmage(bglmg,0,0);
 }
-setTimeout( draw, 1000);
+setlnterval( draw, 16);
