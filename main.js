@@ -6,7 +6,7 @@ var slime = document.createElement("img");
 slime.src = "images/slime.gif";
 var rukia = document.createElement("img");
 rukia.src = "images/rukia.gif";
-var enemy = {
+var slime = {
   x:96,//x座標
   y:480-32//y座標
   };
