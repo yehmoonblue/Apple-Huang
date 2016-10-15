@@ -2,8 +2,8 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
-var slimeImage = document.createElement("img");
-slimeImage.src = "images/slime.gif";
+var enemy = document.createElement("img");
+enemy.src = "images/slime.gif";
 var rukia = document.createElement("img");
 rukia.src = "images/rukia.gif";
 var slime = {
@@ -12,7 +12,7 @@ var slime = {
   };
 function draw(){
   ctx.drawImage(bglmg,0,0);
-  ctx.drawImage(slimeImage,0,0);
+  ctx.drawImage(enemy,0,0);
   ctx.drawImage(rukia,0,0);
 }
 setInterval(draw,16);
