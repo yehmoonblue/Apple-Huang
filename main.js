@@ -6,5 +6,6 @@ var slime = document.createElement("img");
 slime.src = "images/slime.gif";
 function draw(){
   ctx.drawImage(bglmg,0,0);
+  ctx.drawImage(slime,0,0);
 }
 setInterval(draw,16);
