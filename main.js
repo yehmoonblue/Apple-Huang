@@ -5,4 +5,4 @@ bglmg.src = "images/map.png";
 function draw(){
   ctx.drawlmage(bglmg,0,0);
 }
-setlnterval(draw,150);
+setlnterval(draw,16);
