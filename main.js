@@ -6,3 +6,6 @@ function draw(){
   ctx.drawImage(bglmg,0,0);
 }
 setInterval(draw,16);
+var rukia = document.createElement("img");
+rukia.src = "images/rukia.gif";
+setInterval(draw,16);
