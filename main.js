@@ -27,7 +27,7 @@ var tower={
   y:432,
   width:50,
   height:50
-}
+};
 
 //畫畫
 function draw(){
