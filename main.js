@@ -22,7 +22,7 @@ var enemy ={
    this.y += this.speedy/FPS;
   }
 };
-var tower={
+var towerbutton={
   x: 590,
   y: 432,
   width: 50,
@@ -34,7 +34,7 @@ function draw(){
   enemy.move();
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
+  ctx.drawImage(towerImg,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   }
