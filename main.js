@@ -23,10 +23,10 @@ var enemy ={
   }
 };
 var tower={
-  x:590,
-  y:432,
-  width:50,
-  height:50
+  x: 590,
+  y: 432,
+  width: 50,
+  height: 50
 };
 
 //畫畫
