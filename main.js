@@ -15,20 +15,26 @@ towerbuiltImg.src = "images/tower.png";
 var enemy ={
   x: 115,
   y: 480-32,
-//   speedx: 0,
-//   speedy: -64,
-//   move: function(){
-//   this.x += this.speedx/FPS;
-//   this.y += this.speedy/FPS;
+   speedx: 0,
+   speedy: -64,
+   move: function(){
+   this.x += this.speedx/FPS;
+   this.y += this.speedy/FPS;
   }
 };
+var tower={
+  x:590,
+  y:432,
+  width:50,
+  height:50
+}
 
 //畫畫
 function draw(){
   enemy.move();
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(towerImg,590,432,50,50);
+  ctx.drawImage(towerImg,tower.x,tower.y,tower.width,tower.height);
   if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   }
