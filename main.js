@@ -38,7 +38,7 @@ function draw(){
   if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   }
-  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
+//  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
 }
 
 //製造城堡
@@ -46,15 +46,15 @@ var isBuilding = false;
 var tower={};
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+//  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
   isBuilding = true;
-  }
-  else if(isBuilding){
-  tower.x =cursor.x-cursor.x%32;
-  tower.y =cursor.y-cursor.y%32;;
-  isBuilding = false;
-  }
-  else{
+//  }
+//  else if(isBuilding){
+//  tower.x =cursor.x-cursor.x%32;
+//  tower.y =cursor.y-cursor.y%32;;
+ // isBuilding = false;
+//  }
+  if(isBuilding){
   isBuilding= false;
   }
 });
