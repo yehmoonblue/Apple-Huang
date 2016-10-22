@@ -4,7 +4,7 @@
 
 請到這份Google文件問問題：
 https://docs.google.com/document/d/15KpMlCw7Sy9YjHOpx06BBQW4FKFoxlsdCUoVJNnjoAI/edit <br>
-老師會在百忙之中盡量抽空替同學作答Der，請大家不要害羞喔喔～
+老師盡量回答大家的問題Der，請大家不要害羞喔喔～
 
 歡迎同學透過以下連結，尋找那些未知惱人function的用法<br>
 中文：http://pydoing.blogspot.tw/2012/10/javascript-tutorial.html<br>
