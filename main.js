@@ -16,12 +16,11 @@ function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,0,0);
-  ctx.drawImage(tower,580,420,60,60);
+  ctx.drawImage(tower,cursor.x,cursor.y,60,60);
   
 }
 setInterval(draw,16);
 
-var cursor = {x:0,y:0}; 
 $("#game-canvas").on("mousemove",function( event ){
 cursor = {
 x:event.offsetX,
