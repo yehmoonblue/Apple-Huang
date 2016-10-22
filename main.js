@@ -12,6 +12,9 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
+var banana = document.createElement("img");
+bananaa.src = "images/mapwithwater.png";
+
 
 //變數用
 var enemy ={
