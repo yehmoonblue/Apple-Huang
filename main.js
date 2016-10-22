@@ -8,6 +8,7 @@ var rukia = document.createElement("img");
 rukia.src = "images/rukia.gif";
 var tower = document.createElement("img");
 tower.src = "images/tower-btn.png";
+var cursor = {x:0,y:0};
 var enemy = {
   x:96,//x座標
   y:480-32//y座標
