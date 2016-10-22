@@ -3,7 +3,7 @@
 <h1>老師碎碎念</h1>
 
 請到這份Google文件問問題：
-https://docs.google.com/document/d/15KpMlCw7Sy9YjHOpx06BBQW4FKFoxlsdCUoVJNnjoAI/edit
+https://docs.google.com/document/d/15KpMlCw7Sy9YjHOpx06BBQW4FKFoxlsdCUoVJNnjoAI/edit <br>
 老師會在百忙之中盡量抽空替同學作答Der，請大家不要害羞喔喔～
 
 歡迎同學透過以下連結，尋找那些未知惱人function的用法<br>
