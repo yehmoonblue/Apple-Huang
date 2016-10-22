@@ -14,5 +14,6 @@ function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,0,0);
+  ctx.drawImage(<Img DOM物件>,x,y,寬度,高度);
 }
 setInterval(draw,16);
