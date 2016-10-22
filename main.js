@@ -46,15 +46,15 @@ var isBuilding = false;
 var tower={};
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
-//  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
   isBuilding = true;
-//  }
-//  else if(isBuilding){
+  }
+ // else if(isBuilding){
 //  tower.x =cursor.x-cursor.x%32;
 //  tower.y =cursor.y-cursor.y%32;;
  // isBuilding = false;
 //  }
-  if(isBuilding){
+  else{
   isBuilding= false;
   }
 });
