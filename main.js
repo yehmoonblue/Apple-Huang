@@ -16,7 +16,7 @@ function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,0,0);
-  ctx.drawImage(tower,590,430,50,50);
+  ctx.drawImage(tower,590,430,70,70);
   
 }
 setInterval(draw,16);
