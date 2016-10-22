@@ -35,10 +35,10 @@ function draw(){
   ctx.drawImage(bgImg,50,0);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(towerImg,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
-  if(isBuilding && isCollided(cursor.x, cursor.y, 590, 432, 50, 50)===false){
+  if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   }
-//  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
+  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
 }
 
 //製造城堡
