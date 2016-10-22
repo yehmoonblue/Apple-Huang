@@ -1,9 +1,9 @@
-
+//設定畫布環境
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 60;
 
-
+//找出圖片
 var bgImg = document.createElement("img");
 bgImg.src = "images/mapwithwater.png";
 var enemyImg = document.createElement("img");
@@ -12,15 +12,17 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
+
+//變數用
 var enemy ={
   x: 115,
   y: 480-32,
-   speedx: 0,
-   speedy: -64,
-   move: function(){
-   this.x += this.speedx/FPS;
-   this.y += this.speedy/FPS;
-  }
+ //  speedx: 0,
+//   speedy: -64,
+ //  move: function(){
+ //  this.x += this.speedx/FPS;
+//   this.y += this.speedy/FPS;
+//  }
 };
 var towerbutton={
   x: 590,
@@ -57,14 +59,14 @@ $( "#game-canvas" ).on( "click", function(){
   else if(isBuilding){
   tower.x =cursor.x-cursor.x%32;
   tower.y =cursor.y-cursor.y%32;
- 
+ isBuilding=false;
   }
  
 });
 
 
 
-
+//抓出遊標
 $( "#game-canvas" ).on( "mousemove", function( event ) {
 cursor = {
 x: event.offsetX,
@@ -72,9 +74,9 @@ y: event.offsetY
 };
 });
   
-setInterval(draw, 1000/FPS);
 
-//移動
+
+
 
 
 //判斷之間
@@ -90,3 +92,4 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
         return false;
     }
 }
+setInterval(draw, 1000/FPS);
