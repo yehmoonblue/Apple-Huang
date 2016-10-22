@@ -1,3 +1,13 @@
-<h1>問題集</h1>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<h1>老師碎碎念</h1>
 
-老師會研究一下怎麼讓你們問問題，大家可以先想一想自己遇到的問題～！
+請到這份Google文件問問題：
+https://docs.google.com/document/d/15KpMlCw7Sy9YjHOpx06BBQW4FKFoxlsdCUoVJNnjoAI/edit
+老師會在百忙之中盡量抽空替同學作答Der，請大家不要害羞喔喔～
+
+歡迎同學透過以下連結，尋找那些未知惱人function的用法<br>
+中文：http://pydoing.blogspot.tw/2012/10/javascript-tutorial.html<br>
+英文：http://www.w3schools.com/js/
+
+老師個人覺得英文寫的比較好，但覺得讀英文比較吃力也可以參考中文～
