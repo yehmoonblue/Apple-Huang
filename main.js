@@ -18,5 +18,13 @@ function draw(){
   ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower,580,420,60,60);
   
-}
+}game-canvas
 setInterval(draw,16);
+
+$("#game-canvas").on("mousemove",function( event ){
+cursor = {
+x:event.offsetX,
+y:event.offsetY
+};
+});
+var cursor = {x:0,y:0}; 
