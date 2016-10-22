@@ -8,6 +8,8 @@ var rukia = document.createElement("img");
 rukia.src = "images/rukia.gif";
 var tower = document.createElement("img");
 tower.src = "images/tower-btn.png";
+var tower2 = document.createElement("img");
+tower2.src = "images/tower.png";
 var cursor = {x:0,y:0};
 var enemy = {
   x:96,//x座標
@@ -17,8 +19,8 @@ function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,0,0);
-  ctx.drawImage(tower,cursor.x,cursor.y,60,60);
-  
+  ctx.drawImage(tower,500,420,60,60);
+  ctx.drawImage(tower2,cursor.x,cursor.y);
 }
 setInterval(draw,16);
 
