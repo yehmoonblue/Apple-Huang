@@ -13,7 +13,7 @@ var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
 var cursor = {x:0,y:0};
 var enemy = {
-  x:115,//x座標
+  x:110,//x座標
   y:480-32//y座標
 };
 
