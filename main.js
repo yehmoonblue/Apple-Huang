@@ -15,7 +15,13 @@ var cursor = {x:0,y:0};
 var enemy = {
   x:115,//x座標
   y:480-32//y座標
-  };
+ //  speedx: 0,
+//   speedy: -64,
+ //  move: function(){
+ //  this.x += this.speedx/FPS;
+//   this.y += this.speedy/FPS;
+//  }
+};
 
 var towerbutton={
   x: 580,
