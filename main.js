@@ -17,7 +17,7 @@ towerbuiltImg.src = "images/tower.png";
 
 //變數用
 var enemy ={
-  x: 115,
+  x: 110,
   y: 480-32,
  //  speedx: 0,
 //   speedy: -64,
