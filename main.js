@@ -77,4 +77,4 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 }
 
 
-setInterval(draw,16);
+setInterval(draw, 1000/FPS);
