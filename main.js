@@ -25,7 +25,7 @@ var towerbutton={
 };
 
 function draw(){
-  ctx.drawImage(bglmg,50,0);
+  ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,enemy.x,enemy.y);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
