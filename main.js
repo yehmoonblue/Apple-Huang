@@ -30,9 +30,9 @@ function draw(){
   ctx.drawImage(rukia,enemy.x,enemy.y);
   ctx.drawImage(tower,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
-      ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
+      ctx.drawImage(tower2,cursor.x,cursor.y);
   }
-  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
+  ctx.drawImage(tower2, tower.x, tower.y);
 }
 
 var isBuilding = false;
