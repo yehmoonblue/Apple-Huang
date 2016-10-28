@@ -26,7 +26,7 @@ var enemy = {
 var towerbutton={
   x: 580,
   y: 420,
-  width: 60
+  width: 60,
   height: 60
 };
 
