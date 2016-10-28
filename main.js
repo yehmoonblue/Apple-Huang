@@ -18,19 +18,23 @@ var enemy = {
   };
 
 var towerbutton={
-  x: 590,
-  y: 432,
-  width: 50,
-  height: 50
+  x: 580,
+  y: 420,
+  width: 60
+  height: 60
 };
 
 function draw(){
   ctx.drawImage(bglmg,50,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(enemy,enemy.x,enemy.y);
-  ctx.drawImage(tower,580,420,60,60);
-  ctx.drawImage(tower2,cursor.x,cursor.y);
+  ctx.drawImage(tower,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
+  if(isBuilding){
+      ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
+  }
+  ctx.drawImage(towerbuiltImg, tower.x, tower.y);
 }
+
 setInterval(draw,16);
 
 $("#game-canvas").on("mousemove",function( event ){
