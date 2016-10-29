@@ -43,8 +43,8 @@ y:event.offsetY
 };
 });
 
-var isBuilding = flash;
-var tower = {};
+var isBuilding = false;
+var tower={};
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
@@ -56,9 +56,13 @@ $( "#game-canvas" ).on( "click", function(){
   }
   }
   else if(isBuilding){
-  cursor.x =cursor.x;
-  cursor.y =cursor.y;
+  tower.x=cursor.x;
+  tower.y=cursor.y;
+  isBuilding=false;
   }
+  
+ 
+});
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
