@@ -16,8 +16,10 @@ var cursor = {x:0,y:0};
 var enemy = {
   x:96,
   y:480-32,
+  speed :8,
+  speed :64,
   move: function(){
-  speed =64;
+  
 }
 };
 
