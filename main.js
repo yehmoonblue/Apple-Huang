@@ -1,5 +1,6 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
+var FPS = 60;
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
@@ -82,4 +83,4 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 }
 
 
-setInterval(draw, 16);
+setInterval(draw, 1000/FPS);
