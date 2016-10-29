@@ -30,29 +30,10 @@ function draw(){
   ctx.drawImage(rukia,enemy.x,enemy.y);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
-      ctx.drawImage(tower2,cursor.x,cursor.y);
+    ctx.drawImage(tower2,cursor.x,cusor.y);
   }
-  ctx.drawImage(tower2, tower.x, tower.y);
+  ctx.drawImage(tower2,tower.x,tower.y);
 }
-
-var isBuilding = false;
-var tower={};
-var cursor = {};
-$( "#game-canvas" ).on( "click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
-    if(isBuilding){
-    isBuilding= false;
-  }
-    else{
-    isBuilding = true;
-  }
-  }
-  else if(isBuilding){
-  tower.x =cursor.x-cursor.x%32;
-  tower.y =cursor.y-cursor.y%32;
- isBuilding=false;
-  }
- 
 });
 
 
