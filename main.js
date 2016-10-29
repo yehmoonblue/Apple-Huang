@@ -43,6 +43,10 @@ y:event.offsetY
 };
 });
 
+var isBuilding = flash;
+var tower = {};
+var cursor = {};
+
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
