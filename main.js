@@ -46,7 +46,19 @@ y:event.offsetY
 var isBuilding = flash;
 var tower = {};
 var cursor = {};
-
+$( "#game-canvas" ).on( "click", function(){
+  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+    if(isBuilding){
+    isBuilding= false;
+  }
+    else{
+    isBuilding = true;
+  }
+  }
+  else if(isBuilding){
+  cursor.x =cursor.x;
+  cursor.y =cursor.y;
+  }
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
