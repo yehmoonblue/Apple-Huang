@@ -33,8 +33,7 @@ function draw(){
     ctx.drawImage(tower2,cursor.x,cusor.y);
   }
   ctx.drawImage(tower2,tower.x,tower.y);
-}
-});
+};
 
 
 $("#game-canvas").on("mousemove",function( event ){
