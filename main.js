@@ -48,8 +48,8 @@ $( "#game-canvas" ).on( "click", function(){
   }
   }
   else if(isBuilding){
-  tower.x=cursor.x;
-  tower.y=cursor.y;
+  tower.x=cursor.x-curson.x%32;
+  tower.y=cursor.y-curson.y%32;
   isBuilding=false;
   }
   
