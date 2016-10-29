@@ -19,7 +19,6 @@ var enemy = {
   speed =64;
 }
 };
-var 
 
 var towerbutton={
   x: 580,
@@ -28,7 +27,9 @@ var towerbutton={
   height: 60
 };
 
+
 function draw(){
+  enemy.move();
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,enemy.x,enemy.y);
