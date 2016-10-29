@@ -19,7 +19,7 @@ var enemy = {
   speedx :8,
   speedy :64,
   move: function(){
-    {x:0,y:-1};
+    console.log
 }
 };
 
