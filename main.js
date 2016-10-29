@@ -20,7 +20,7 @@ var enemy = {
   speedy :64,
   move: function(){
     this.x=96
-    this.y=(480-32)%32
+    this.y=480-32-32
 }
 };
 
