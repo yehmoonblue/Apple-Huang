@@ -35,14 +35,6 @@ function draw(){
   ctx.drawImage(tower2,tower.x,tower.y);
 };
 
-
-$("#game-canvas").on("mousemove",function( event ){
-cursor = {
-x:event.offsetX,
-y:event.offsetY
-};
-});
-
 var isBuilding = false;
 var tower={};
 var cursor = {};
@@ -62,6 +54,14 @@ $( "#game-canvas" ).on( "click", function(){
   }
   
  
+});
+
+
+$("#game-canvas").on("mousemove",function( event ){
+cursor = {
+x:event.offsetX,
+y:event.offsetY
+};
 });
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
