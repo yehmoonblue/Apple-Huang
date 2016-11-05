@@ -37,7 +37,26 @@ var enemy = {
       this.x,this.y,
       this.pathDes++;
       console.log("qq")
-    
+      if(this.x>enemyPath[this.pathDes].x{
+         this.speedx=-64;
+         this.speedy=0;
+         }
+        else if(this.x<enemyPath[this.pathDes].x{
+         this.speedx=64;
+         this.speedy=0;
+         }
+         else if(this.y>enemyPath[this.pathDes].y{
+         this.speedx=0;
+         this.speedy=-64;
+         }
+        else if(this.y<enemyPath[this.pathDes].y{
+         this.speedx=-64;
+         this.speedy=0;
+         }
+        )
+
+    this.x=this.x+this.speedx/FPS;
+    this.y=this.y+this.speedy/FPS;
       }
   }
 };
