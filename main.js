@@ -14,7 +14,7 @@ var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
 var cursor = {x:0,y:0};
 var enemy = {
-  x:350,
+  x:370,
   y:60,
   //{x:96,y:60},
     //{x:400,y:60}
