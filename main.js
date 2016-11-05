@@ -15,9 +15,10 @@ tower2.src = "images/tower.png";
 var cursor = {x:0,y:0};
 var enemy = {
   x:385,
-  y:60,
+  y:100,
+  //{x:96,y:448}
   //{x:96,y:60},
-    //{x:400,y:60}
+    //{x:385,y:60}
   speedx :0,
   speedy :-64,
   move: function(){
