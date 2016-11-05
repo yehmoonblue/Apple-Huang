@@ -26,7 +26,7 @@ var enemyPath = [
 var enemy = {
   pathDes: 0,
   x:96,
-  y:448,
+  y:480-32,
   speedx :0,
   speedy :-64,
   speed :64,
