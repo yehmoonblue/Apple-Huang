@@ -12,16 +12,31 @@ var tower1 = document.createElement("img");
 tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
-var cursor = {x:0,y:0};
+
+var enemyPath = [
+  {x:96,y:60},
+  {x:383,y:60},
+  {x:383,y:190},
+  {x:225,y:190},
+  {x:225,y:315},
+  {x:543,y:315},
+  {x:543,y:93}
+  ];
+
 var enemy = {
-  x:385,
-  y:200,
-  //{x:96,y:448}
-  //{x:96,y:60},
-    //{x:385,y:60}
+  pathDes: 0,
+  x:96,
+  y:448,
   speedx :0,
   speedy :-64,
+  speedy :64,
   move: function(){
+    if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
+      enemyPath[this.pathDes].x,
+      enemyPath[this.pathDes].y,
+      this.x,this.y,
+      this.pathDes++;
+      console.log("qq")}
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
 }
