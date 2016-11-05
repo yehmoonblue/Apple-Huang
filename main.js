@@ -51,7 +51,7 @@ var towerbutton={
 
 
 function draw(){
-  //enemy.move();
+  enemy.move();
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,enemy.x,enemy.y);
