@@ -15,7 +15,7 @@ tower2.src = "images/tower.png";
 var cursor = {x:0,y:0};
 var enemy = {
   x:96,
-  y:480-32,
+  y:448,
   speedx :0,
   speedy :-64,
   move: function(){
@@ -33,7 +33,7 @@ var towerbutton={
 
 
 function draw(){
-  enemy.move();
+  //enemy.move();
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,0,0);
   ctx.drawImage(rukia,enemy.x,enemy.y);
