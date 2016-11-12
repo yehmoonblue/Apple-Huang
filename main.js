@@ -88,6 +88,7 @@ function draw(){
     ctx.drawImage(tower2,cursor.x,cursor.y);
   }
   ctx.drawImage(tower2,tower.x,tower.y);
+  clock++;
 };
 
 var isBuilding = false;
