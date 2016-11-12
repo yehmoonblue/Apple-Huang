@@ -74,7 +74,8 @@ var towerbutton={
 };
 
 
-function draw(){  
+function draw(){
+  ctx.drawImage(bglmg,0,0);
     if (clock%80==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
@@ -83,8 +84,6 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
-  enemy.move();
-  ctx.drawImage(bglmg,0,0);
   ctx.drawImage(slime,enemy.x,enemy.y);
   ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
