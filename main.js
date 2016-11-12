@@ -77,7 +77,7 @@ var towerbutton={
 function draw(){
   for(var i=0;i<enemies.length;i++){
     enemies[i].move();
-    ctx.drawImage(rukia,enemies[i].x,enemies[i].y);
+    ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
     if (clock%80==0){
     var newEnemy = new Enemy();
@@ -85,8 +85,8 @@ function draw(){
   }
   enemy.move();
   ctx.drawImage(bglmg,0,0);
-  ctx.drawImage(slime,0,0);
-  ctx.drawImage(rukia,enemy.x,enemy.y);
+  ctx.drawImage(slime,enemy.x,enemy.y);
+  ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
