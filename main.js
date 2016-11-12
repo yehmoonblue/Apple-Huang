@@ -23,7 +23,7 @@ var enemyPath = [
   {x:542,y:92}
   ];
 
-var enemy = new Enemy();
+
 
 function Enemy(){
   this.x = 96;
@@ -60,7 +60,7 @@ function Enemy(){
       }
   }
 };
-
+var enemy = new Enemy();
 
 var towerbutton={
   x: 580,
