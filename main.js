@@ -63,7 +63,7 @@ function Enemy(){
       }
   }
 };
-var enemy = new Enemy();
+
 
 
 var towerbutton={
