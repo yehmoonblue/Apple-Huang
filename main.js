@@ -23,14 +23,15 @@ var enemyPath = [
   {x:542,y:92}
   ];
 
-var enemy = {
-  pathDes: 0,
-  x:96,
-  y:480-32,
-  speedx :0,
-  speedy :-64,
-  speed :64,
-  move: function(){
+var enemy = new Enemy();
+
+function Enemy(){
+  this.x = 96;
+  this.y = 480-32;
+  this.direction = {x:0,y:-1};
+  this.speed = 64;
+  this.pathDes = 0;
+  this.move = function(){
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
       this.x = enemyPath[this.pathDes].x,
       this.y = enemyPath[this.pathDes].y,
@@ -60,6 +61,7 @@ var enemy = {
       }
   }
 };
+
 
 var towerbutton={
   x: 580,
