@@ -1,6 +1,8 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 60;
+var enemies = [];
+var clock = 0;
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
@@ -62,6 +64,7 @@ function Enemy(){
   }
 };
 var enemy = new Enemy();
+
 
 var towerbutton={
   x: 580,
