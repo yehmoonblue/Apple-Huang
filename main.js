@@ -85,8 +85,9 @@ function draw(){
   for(var i=0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
+    ctx.drawImage(shime1,enemies[i].x,enemies[i].y);
   }
-  ctx.drawImage(shime1,20,20);
+  
   ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
