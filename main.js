@@ -14,8 +14,7 @@ var tower1 = document.createElement("img");
 tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
-var shime1 = document.createElement("img");
-shime1.src = "images/shime1.png";
+
 
 var enemyPath = [
   {x:96,y:60},
@@ -85,7 +84,6 @@ function draw(){
   for(var i=0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
-    ctx.drawImage(shime1,enemies[i].x,enemies[i].y);
   }
   
   ctx.drawImage(rukia,0,0);
