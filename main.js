@@ -74,14 +74,14 @@ var towerbutton={
 };
 
 
-function draw(){
-  for(var i=0;i<enemies.length;i++){
-    enemies[i].move();
-    ctx.drawImage(slime,enemies[i].x,enemies[i].y);
-  }
+function draw(){  
     if (clock%80==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
+  }
+  for(var i=0;i<enemies.length;i++){
+    enemies[i].move();
+    ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
   enemy.move();
   ctx.drawImage(bglmg,0,0);
