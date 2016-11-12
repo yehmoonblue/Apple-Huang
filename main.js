@@ -75,7 +75,7 @@ var towerbutton={
 
 
 function draw(){
-  if (clock%80)==0{
+  if (clock%80==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
