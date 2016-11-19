@@ -3,7 +3,6 @@ var ctx = canvas.getContext("2d");
 var FPS = 60;
 var enemies = [];
 var clock = 0;
-var HP = 100;
 
 
 var bglmg = document.createElement("img");
@@ -34,6 +33,7 @@ var enemyPath = [
 
 function Enemy(){
   this.x = 96;
+  this.hp = 10;
   this.y = 480-32;
   this.speedx=0;
   this.speedy=-64
@@ -41,10 +41,12 @@ function Enemy(){
   this.speed = 64; 
   this.move = function(){
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
+      if 
       this.x = enemyPath[this.pathDes].x,
       this.y = enemyPath[this.pathDes].y,
       this.pathDes++;
-      console.log("qq")
+      
+      
     
       if(this.x>enemyPath[this.pathDes].x){
          this.speedx=-64;
@@ -86,6 +88,8 @@ function draw(){
     enemies.push(newEnemy);
   }
   for(var i=0;i<enemies.length;i++){
+      if (enemies[i].hp<=0) {
+           enemies.splice(i,1);}
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
