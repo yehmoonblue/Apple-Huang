@@ -8,8 +8,6 @@ var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
 var slime = document.createElement("img");
 slime.src = "images/slime.gif";
-var rukia = document.createElement("img");
-rukia.src = "images/rukia.gif";
 var tower1 = document.createElement("img");
 tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
@@ -88,7 +86,6 @@ function draw(){
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
   ctx.fillText("HP",20,20);  
-  ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
