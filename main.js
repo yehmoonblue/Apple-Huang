@@ -14,7 +14,8 @@ var tower1 = document.createElement("img");
 tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
-
+ctx.font="24px Arial";
+ctx.fillStyle="white";
 
 
 var enemyPath = [
@@ -86,9 +87,7 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
-  ctx.fillText("HP",0,0);
-  ctx.font="24px Arial";
-  ctx.fillStyle="white";
+  ctx.fillText("HP",0,0);  
   ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
