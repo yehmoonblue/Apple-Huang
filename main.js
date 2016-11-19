@@ -87,6 +87,9 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
+  ctx.fillText("HP",0,0);
+  ctx.font="24px Arial";
+  ctx.fillStyle="white";
   ctx.drawImage(icon,100,100);
   ctx.drawImage(rukia,0,0);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
