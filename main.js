@@ -6,6 +6,8 @@ var clock = 0;
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
+var ball = document.createElement("img");
+ball.src = "images/cannon-ball.png";
 var slime = document.createElement("img");
 slime.src = "images/slime.gif";
 var tower1 = document.createElement("img");
@@ -85,7 +87,8 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
-  ctx.fillText("HP",20,20);  
+  ctx.fillText("HP",20,20);
+  ctx.drawImage(ball,300,300);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
