@@ -41,7 +41,8 @@ function Enemy(){
   this.speed = 64; 
   this.move = function(){
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
-      if 
+
+      
       this.x = enemyPath[this.pathDes].x,
       this.y = enemyPath[this.pathDes].y,
       this.pathDes++;
@@ -93,7 +94,7 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
-  ctx.fillText("HP:",20,20);
+  ctx.fillText("HP:"+treehp ,20,20);
   ctx.drawImage(ball,550,100);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
