@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 var FPS = 60;
 var enemies = [];
 var clock = 0;
-
+var treehp = 100;
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
@@ -41,8 +41,11 @@ function Enemy(){
   this.speed = 64; 
   this.move = function(){
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
-
-      
+      if (this.pathDes === enemyPath.length-1){
+      this.hp = 0;
+      treehp-= 10;
+      }
+      else{
       this.x = enemyPath[this.pathDes].x,
       this.y = enemyPath[this.pathDes].y,
       this.pathDes++;
@@ -65,6 +68,7 @@ function Enemy(){
       this.speedx=0;
       this.speedy=64;
         }
+      }
     }else{
     this.x=this.x+this.speedx/FPS;
     this.y=this.y+this.speedy/FPS;
