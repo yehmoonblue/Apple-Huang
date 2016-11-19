@@ -88,7 +88,7 @@ function draw(){
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
   ctx.fillText("HP",20,20);
-  ctx.drawImage(ball,300,300);
+  ctx.drawImage(ball,500,100);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
