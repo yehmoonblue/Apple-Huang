@@ -3,6 +3,8 @@ var ctx = canvas.getContext("2d");
 var FPS = 60;
 var enemies = [];
 var clock = 0;
+var HP = 100;
+
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
@@ -87,7 +89,7 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
-  ctx.fillText("HP",20,20);
+  ctx.fillText("HP:",20,20);
   ctx.drawImage(ball,550,100);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
