@@ -1,5 +1,7 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
+    ctx.font = "28px Arial";
+    ctx.fillStyle = "white";
 var FPS = 50;
 var clock = 0;
 var treehp = 100;
@@ -7,7 +9,8 @@ var money = 25;
 var score = 0;
 var enemies = [];
 var towers=[];
-
+var crosshairImg = document.createElement("img");
+crosshairImg.src = "images/crosshair.png";
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
