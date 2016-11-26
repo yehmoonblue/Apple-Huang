@@ -134,7 +134,7 @@ var tower={
   range:96,
   aimingEnemyId:null,
   searchEnemy:function(){
-  this.readyToSchootTime-=1/FPS
+  this.readyToShootTime-=1/FPS
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
         Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
@@ -151,8 +151,6 @@ var tower={
     this.aimingEnemyId = null;
   },
     shoot:function(id){
-      var newCannonball = newCannonball(this);
-    cannonballs.push(newCannonball);
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
     ctx.lineTo(enemies[id].x,enemies[id].y);
