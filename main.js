@@ -1,6 +1,6 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-var FPS = 60;
+var FPS = 50;
 var clock = 0;
 var treehp = 100;
 var money = 25;
@@ -150,7 +150,7 @@ function Tower(x,y){
   this.range=96,
   this.aimingEnemyId=null,
   this.searchEnemy=function(){
-  this.readyToShootTime -= 1/FPS
+  this.readyToShootTime -= 1/FPS;
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
         Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
