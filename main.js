@@ -1,220 +1,187 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-    ctx.font = "28px Arial";
-    ctx.fillStyle = "white";
+ctx.font = "28px Arial";
+ctx.fillStyle = "white";
 var FPS = 50;
-var clock = 0;
-var treehp = 100;
-var money = 25;
-var score = 0;
-var enemies = [];
+var clock=0;
+var treehp=100;
+var money=25;
+var score=0;
+var enemies=[];
 var towers=[];
 var crosshairImg = document.createElement("img");
 crosshairImg.src = "images/crosshair.png";
-
-var bglmg = document.createElement("img");
-bglmg.src = "images/map.png";
+var bgImg = document.createElement("img");
+bgImg.src = "images/mapwithwater.png";
 var slime = document.createElement("img");
 slime.src = "images/slime.gif";
 var tower1 = document.createElement("img");
 tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
-ctx.font="24px Arial";
-ctx.fillStyle="white";
-var crosshairImg = document.createElement("img");
-crosshairImg.src = "images/crosshair.png";
 
 
 var enemyPath = [
-  {x:96,y:60},
-  {x:382,y:60},
-  {x:382,y:190},
-  {x:224,y:190},
-  {x:224,y:314},
-  {x:542,y:314},
-  {x:542,y:166}
-  ];
+    {x:96,y:60},
+    {x:382,y:60},
+    {x:382,y:190},
+    {x:224,y:190},
+    {x:224,y:314},
+    {x:542,y:314},
+    {x:542,y:166}
+];
 
 
-
-function Enemy(){
-  this.x = 96;
-  this.hp = 10;
-  this.y = 480-32;
-  this.speedx=0;
-  this.speedy=-64
-  this.pathDes = 0;
-  this.speed = 64; 
-  this.move = function(){
-    if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
-      if (this.pathDes === enemyPath.length-1){
-      this.hp = 0;
-      treehp-= 10;
-      }
-      else{
-      this.x = enemyPath[this.pathDes].x,
-      this.y = enemyPath[this.pathDes].y,
-      this.pathDes++;
-      
-      
-    
-      if(this.x>enemyPath[this.pathDes].x){
-         this.speedx=-64;
-         this.speedy=0;
-         }
-        else if(this.x<enemyPath[this.pathDes].x){
-         this.speedx=64;
-         this.speedy=0;
-         }
-         else if(this.y>enemyPath[this.pathDes].y){
-         this.speedx=0;
-         this.speedy=-64;
-         }
-        else {
-      this.speedx=0;
-      this.speedy=64;
+function Enemy() {
+    this.x = 96;
+    this.hp= 10;
+    this.y = 480-32;
+    this.speedX = 0;
+    this.speedY = -64;
+    this.pathDes = 0;
+    this.speed = 64;
+    this.move = function(){
+        if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
+            if (this.pathDes === enemyPath.length-1) {
+                this.hp=0;
+                treehp -= 10;
+            }else{
+                this.x = enemyPath[this.pathDes].x;
+                this.y = enemyPath[this.pathDes].y;
+                this.pathDes++;
+                if (enemyPath[this.pathDes].x>this.x) {
+                    this.speedX = -64;
+                    this.speedY = 0;
+                }else if (enemyPath[this.pathDes].x<this.x) {
+                    this.speedX = 64;
+                    this.speedY = 0;
+                }else if (enemyPath[this.pathDes].y>this.y) {
+                    this.speedX = 0;
+                    this.speedY = -64;
+                }else if (enemyPath[this.pathDes].y<this.y) {
+                    this.speedX = 0;
+                    this.speedY = 64;
+                }
+            }
+        }else{
+            this.x = this.x + this.speedX/FPS;
+            this.y = this.y + this.speedY/FPS;
         }
-      }
-    }else{
-    this.x=this.x+this.speedx/FPS;
-    this.y=this.y+this.speedy/FPS;
-      }
-  }
-};
+    };
+}
 
-
-
+var enemy=new Enemy();
 var towerbutton={
-  x: 580,
-  y: 420,
-  width: 60,
-  height: 60
+    x: 525,
+    y: 432,
+    width: 50,
+    height: 50
 };
 
 
 function draw(){
-  ctx.drawImage(bglmg,0,0);
-    if (clock%80==0){
-    var newEnemy = new Enemy();
-    enemies.push(newEnemy);
-  }
-
-  for(var i=0;i<enemies.length;i++){
-      if (enemies[i].hp<=0) {
-        enemies.splice(i,1);
-        money+=8;
-        score+=10;
-      }
-    enemies[i].move();
-    ctx.drawImage(slime,enemies[i].x,enemies[i].y);
-  }
-  
-  
-  ctx.fillText("HP:"+treehp ,20,20);
-  ctx.fillText("Money:"+money,20,40);
-  ctx.fillText("Score:"+score,20,60);
-  ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
-  if(isBuilding){
-    ctx.drawImage(tower2,cursor.x,cursor.y);
-  }
-  for(var i=0;i<towers.length;i++){
-  ctx.drawImage(tower2,towers[i].x,towers[i].y);  
-  towers[i].searchEnemy();
-  if(towers[i].aimingEnemyId!=null){
-  var id = towers[i].aimingEnemyId;
-  ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);    
-      
-  }   
-  
-  clock++;
-};
-
-
-function Cannonball(){
-this.speed = 320;
-this.damage = 5;
+    ctx.drawImage(bgImg,0,0);
+    if(clock%80==0){
+        var newenemy= new Enemy();
+        enemies.push(newenemy);
+    }
+    ctx.fillText( "HP:"+treehp , 20, 20 );
+    ctx.fillText( "Money:"+money , 20, 40 );
+    ctx.fillText( "Score:"+score , 20, 60 );
+    for(var i=0;i<enemies.length;i++){
+        if (enemies[i].hp<=0) {
+            enemies.splice(i,1);
+            money+=8;
+            score+=10;
+        }
+        enemies[i].move();
+        ctx.drawImage(slime, enemies[i].x, enemies[i].y);
+    }
+    ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
+    if(isBuilding){
+        ctx.drawImage(tower2,cursor.x,cursor.y);
+    }
+    
+    for(var i=0;i<towers.length;i++){
+        ctx.drawImage(tower2,towers[i].x,towers[i].y);  
+        towers[i].searchEnemy();
+        if(towers[i].aimingEnemyId!=null){
+            var id = towers[i].aimingEnemyId;
+            ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
+        }
+    }
+    clock++;
 }
 
-
-var isBuilding = false; 
-var cannonballs=[];
+var isBuilding = false;
 function Tower(x,y){
-  this.x=x;
-  this.y=y;
-  this.fireRate=1,
-  this.readyToShootTime=1,
-  this.damage=5,
-  this.range=96,
-  this.aimingEnemyId=null,
-  this.searchEnemy=function(){
-  this.readyToShootTime -= 1/FPS;
-    for(var i=0;i<enemies.length;i++){
-      var distance = Math.sqrt(
-        Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
-      );
-      if (distance<=this.range){
-        this.aimingEnemyId = i;
-        if(this.readyToShootTime<=0){
-        this.shoot(i);
-        this.readyToShootTime = this.fireRate;
+    this.x=x;
+    this.y=y;
+    this.range=96;
+    this.aimingEnemyId=null;
+    this.fireRate=1; 
+    this.readyToShootTime=1;
+    this.damage=5;
+    this.searchEnemy=function(){
+        this.readyToShootTime -= 1/FPS;
+        for(var i=0; i<enemies.length; i++){
+            var distance = Math.sqrt(
+                Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
+            );
+            if (distance<=this.range) {
+                this.aimingEnemyId = i;
+                if(this.readyToShootTime<=0) {
+                    this.shoot(i);
+                    this.readyToShootTime = this.fireRate;
+                }
+                return;
+            }
         }
-        return;
-      }
-    }
-    this.aimingEnemyId = null;
-  },
+        this.aimingEnemyId = null;
+    };
     this.shoot=function(id){
-    ctx.beginPath();
-    ctx.moveTo(this.x,this.y);
-    ctx.lineTo(enemies[id].x,enemies[id].y);
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 3;
-    ctx.stroke();
-      enemies[id].hp=enemies[id].hp-this.damage;
-  }
+        ctx.beginPath(); 
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(enemies[id].x, enemies[id].y);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        enemies[id].hp = enemies[id].hp - this.damage;
+    };
 };
-
-
-
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
-  if(isCollided(cursor.x, cursor.y, 540, 432, 50, 50)){
-    if(isBuilding){
-    isBuilding= false;
-   }
-    else{
-    isBuilding = true;
-   }
-  }
-  else if(isBuilding&&money>=25){
-  towers.push(new Tower(cursor.x-cursor.x%32,cursor.y-cursor.y%32));
-  money-=25;
-  isBuilding=false;
-  }
-  
- 
+    if(isCollided(cursor.x, cursor.y, 540, 432, 50, 50)){
+        if(isBuilding){
+            isBuilding= false;
+        }else{
+            isBuilding = true;
+        }
+    }else if(isBuilding&&money>=25){
+        towers.push(new Tower(cursor.x-cursor.x%32,cursor.y-cursor.y%32));
+        money-=25;
+        isBuilding=false;
+    }
 });
 
 
-$("#game-canvas").on("mousemove",function( event ){
+
+$( "#game-canvas" ).on( "mousemove", function( event ) {
 cursor = {
-x:event.offsetX,
-y:event.offsetY
+    x: event.offsetX,
+    y: event.offsetY
 };
 });
-
+  
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
-        &&  pointX <= targetX + targetWidth
-        &&  pointY >= targetY
-        &&  pointY <= targetY + targetHeight
-    ){
+       &&  pointX <= targetX + targetWidth
+       &&  pointY >= targetY
+       &&  pointY <= targetY + targetHeight
+      ){
         return true;
     } else {
         return false;
     }
 }
-}
-
 setInterval(draw, 1000/FPS);
