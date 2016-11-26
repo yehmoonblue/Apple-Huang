@@ -122,26 +122,14 @@ this.damage = 5;
 
 var isBuilding = false; 
 var cannonballs=[];
-var tower={
-  shoot:function(){
-    ctx.beginPath();
-    ctx.moveTo();
-    ctx.lineTo();
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 3;
-    ctx.stroke();
-    var newCannonball = newCannonball(this);
-    cannonballs.push(newCannonball);
-  }
+var tower={  
   fireRate:1,
   readyToShootTime:1,
   damage:5,
   range:96,
-}
   aimingEnemyId:null,
   searchEnemy:function(){
   this.readyToSchootTime -=1/FPS
-  }
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
         Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
@@ -156,6 +144,15 @@ var tower={
       }
     }
     this.aimingEnemyId = null;
+  },
+    shoot:function(id){
+    ctx.beginPath();
+    ctx.moveTo(this.x,this.y);
+    ctx.lineTo(enemies[id].x,enemies[id].y);
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+      enemies[id].hp=enemies[id].hp-this.damage;
   }
 };
 
