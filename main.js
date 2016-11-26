@@ -144,12 +144,12 @@ var cannonballs=[];
 function Tower(x,y){
   this.x=x;
   this.y=y;
-  this.fireRate:1,
-  this.readyToShootTime:1,
-  this.damage:5,
-  this.range:96,
-  this.aimingEnemyId:null,
-  this.searchEnemy:function(){
+  this.fireRate=1,
+  this.readyToShootTime=1,
+  this.damage=5,
+  this.range=96,
+  this.aimingEnemyId=null,
+  this.searchEnemy=function(){
   this.readyToShootTime-=1/FPS
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
