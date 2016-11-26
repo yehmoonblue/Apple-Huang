@@ -181,19 +181,21 @@ function Tower(x,y){
 
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+  if(isCollided(cursor.x, cursor.y, 540, 432, 50, 50)){
     if(isBuilding){
     isBuilding= false;
-  }
+   }
     else{
     isBuilding = true;
+   }
   }
-  }
-  else if(isBuilding){
-  tower.x=cursor.x-cursor.x %32;
-  tower.y=cursor.y-cursor.y %32;
+  else if(isBuilding&&money>=25){
+  towers.push(new Tower(cursor.x-cursor.x%32,cursor.y-cursor.y%32));
+  money-=25;
   isBuilding=false;
-  } 
+  }
+  
+ 
 });
 
 
