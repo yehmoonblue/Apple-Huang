@@ -96,12 +96,7 @@ function draw(){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
   }
-  tower.searchEnemy();
-  if(tower.aimingEnemyId!=null){
-  var id = tower.aimingEnemyId;
-  ctx.drawImage(crosshairImg,enemies[id].x,
-               enemies[id].y);
-  }
+
   for(var i=0;i<enemies.length;i++){
       if (enemies[i].hp<=0) {
         enemies.splice(i,1);
