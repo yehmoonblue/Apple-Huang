@@ -1,9 +1,13 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 60;
-var enemies = [];
 var clock = 0;
 var treehp = 100;
+var money = 25;
+var score = 0;
+var enemies = [];
+var towers=[];
+
 
 var bglmg = document.createElement("img");
 bglmg.src = "images/map.png";
@@ -105,6 +109,7 @@ function draw(){
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
   ctx.fillText("HP:"+treehp ,20,20);
+  ctx.fillText("Score"+money,20,30);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
