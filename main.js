@@ -119,25 +119,39 @@ this.speed = 320;
 this.damage = 5;
 }
 
-var isBuilding = false;
+
+var isBuilding = false; 
 var cannonballs=[];
 var tower={
   shoot:function(){
-  var newCannonball = newCannonball(this);
-  cannonballs.push(newCannonball);
+    ctx.beginPath();
+    ctx.moveTo();
+    ctx.lineTo();
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    var newCannonball = newCannonball(this);
+    cannonballs.push(newCannonball);
   }
   fireRate:1,
   readyToShootTime:1,
   damage:5,
   range:96,
+}
   aimingEnemyId:null,
   searchEnemy:function(){
+  this.readyToSchootTime -=1/FPS
+  }
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
         Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)
       );
       if (distance<=this.range){
         this.aimingEnemyId = i;
+        if(this.readyToShootTime<=0){
+        this.shoot();
+        this.readyToShootTime = this.fireRate;
+        }
         return;
       }
     }
@@ -161,9 +175,7 @@ $( "#game-canvas" ).on( "click", function(){
   tower.x=cursor.x-cursor.x %32;
   tower.y=cursor.y-cursor.y %32;
   isBuilding=false;
-  }
-  
- 
+  } 
 });
 
 
