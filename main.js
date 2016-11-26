@@ -30,7 +30,7 @@ var enemyPath = [
   {x:224,y:190},
   {x:224,y:314},
   {x:542,y:314},
-  {x:542,y:174}
+  {x:542,y:168}
   ];
 
 
@@ -112,7 +112,8 @@ function draw(){
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
   ctx.fillText("HP:"+treehp ,20,20);
-  ctx.fillText("Score："+money,20,40);
+  ctx.fillText("Money:"+money,20,40);
+  ctx.fillText("Score:"+score,20,60);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
