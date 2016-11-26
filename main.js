@@ -35,7 +35,7 @@ var enemyPath = [
 
 
 
-//function Enemy(){
+function Enemy(){
   this.x = 96;
   this.hp = 10;
   this.y = 480-32;
@@ -43,7 +43,7 @@ var enemyPath = [
   this.speedy=-64
   this.pathDes = 0;
   this.speed = 64; 
-  this.move = function(){
+  //this.move = function(){
     if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y,this.x,this.y, this.speed/FPS, this.speed/FPS)){
       if (this.pathDes === enemyPath.length-1){
       this.hp = 0;
