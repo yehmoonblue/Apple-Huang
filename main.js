@@ -146,6 +146,8 @@ var tower={
     this.aimingEnemyId = null;
   },
     shoot:function(id){
+      var newCannonball = newCannonball(this);
+    cannonballs.push(newCannonball);
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
     ctx.lineTo(enemies[id].x,enemies[id].y);
