@@ -109,7 +109,7 @@ function draw(){
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
   ctx.fillText("HP:"+treehp ,20,20);
-  ctx.fillText("Score"+money,20,30);
+  ctx.fillText("Score："+money,20,40);
   ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
