@@ -113,8 +113,22 @@ function draw(){
   clock++;
 };
 
+
+function Cannonball(){
+this.speed = 320;
+this.damage = 5;
+}
+
 var isBuilding = false;
+var cannonballs=[];
 var tower={
+  shoot:function(){
+  var newCannonball = newCannonball(this);
+  cannonballs.push(newCannonball);
+  }
+  fireRate:1,
+  readyToShootTime:1,
+  damage:5,
   range:96,
   aimingEnemyId:null,
   searchEnemy:function(){
@@ -130,6 +144,9 @@ var tower={
     this.aimingEnemyId = null;
   }
 };
+
+
+
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
