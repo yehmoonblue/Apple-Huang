@@ -104,7 +104,10 @@ function draw(){
   }
   for(var i=0;i<enemies.length;i++){
       if (enemies[i].hp<=0) {
-           enemies.splice(i,1);}
+        enemies.splice(i,1);
+        money+=8;
+        score+=10;
+      }
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
