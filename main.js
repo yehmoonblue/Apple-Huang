@@ -111,6 +111,8 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(slime,enemies[i].x,enemies[i].y);
   }
+  
+  
   ctx.fillText("HP:"+treehp ,20,20);
   ctx.fillText("Money:"+money,20,40);
   ctx.fillText("Score:"+score,20,60);
@@ -118,7 +120,15 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(tower2,cursor.x,cursor.y);
   }
-  ctx.drawImage(tower2,tower.x,tower.y);
+  for(var i=0;i<towers.length;i++){
+  ctx.drawImage(tower2,towers[i].x,towers[i].y);  
+  towers[i].searchEnemy();
+  if(towers[i].aimingEnemyId!=null){
+  var id = towers[i].aimingEnemyId;
+  ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);    
+      
+  }   
+  
   clock++;
 };
 
@@ -131,13 +141,15 @@ this.damage = 5;
 
 var isBuilding = false; 
 var cannonballs=[];
-var tower={  
-  fireRate:1,
-  readyToShootTime:1,
-  damage:5,
-  range:96,
-  aimingEnemyId:null,
-  searchEnemy:function(){
+function Tower(x,y){
+  this.x=x;
+  this.y=y;
+  this.fireRate:1,
+  this.readyToShootTime:1,
+  this.damage:5,
+  this.range:96,
+  this.aimingEnemyId:null,
+  this.searchEnemy:function(){
   this.readyToShootTime-=1/FPS
     for(var i=0;i<enemies.length;i++){
       var distance = Math.sqrt(
@@ -154,7 +166,7 @@ var tower={
     }
     this.aimingEnemyId = null;
   },
-    shoot:function(id){
+    this.shoot=function(id){
     ctx.beginPath();
     ctx.moveTo(this.x,this.y);
     ctx.lineTo(enemies[id].x,enemies[id].y);
