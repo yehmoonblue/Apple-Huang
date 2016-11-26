@@ -35,7 +35,7 @@ var enemyPath = [
 
 
 
-function Enemy(){
+//function Enemy(){
   this.x = 96;
   this.hp = 10;
   this.y = 480-32;
