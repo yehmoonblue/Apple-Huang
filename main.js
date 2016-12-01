@@ -22,7 +22,7 @@ green.src = "images/166863.gif";
 
 
 var enemyPath = [
-    {x:96,y:60},
+    {x:90,y:60},
     {x:382,y:60},
     {x:382,y:190},
     {x:224,y:190},
@@ -33,7 +33,7 @@ var enemyPath = [
 
 
 function Enemy() {
-    this.x = 96;
+    this.x = 90;
     this.hp= 10;
     this.y = 480-32;
     this.speedX = 0;
