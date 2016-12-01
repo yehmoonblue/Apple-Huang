@@ -116,7 +116,7 @@ var isBuilding = false;
 function Tower(x,y){
     this.x=x;
     this.y=y;
-    this.range=96;
+    this.range=90;
     this.aimingEnemyId=null;
     this.fireRate=1; 
     this.readyToShootTime=1;
