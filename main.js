@@ -22,7 +22,7 @@ green.src = "images/166863.gif";
 
 
 var enemyPath = [
-    {x:90,y:60},
+    {x:96,y:60},
     {x:382,y:60},
     {x:382,y:190},
     {x:224,y:190},
