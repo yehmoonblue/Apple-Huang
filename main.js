@@ -77,7 +77,10 @@ var towerbutton={
     width: 50,
     height: 50
 };
-
+var green={
+width:30,
+height:40
+};
 
 function draw(){
     ctx.drawImage(bgImg,0,0);
