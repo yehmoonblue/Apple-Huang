@@ -77,10 +77,6 @@ var towerbutton={
     width: 50,
     height: 50
 };
-var green={
-width:30,
-height:40
-};
 
 function draw(){
     ctx.drawImage(bgImg,0,0);
@@ -98,7 +94,7 @@ function draw(){
             score+=10;
         }
         enemies[i].move();
-        ctx.drawImage(green, enemies[i].x, enemies[i].y);
+        ctx.drawImage(green, enemies[i].x, enemies[i].y,40,30);
     }
     ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
     if(isBuilding){
