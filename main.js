@@ -19,6 +19,8 @@ var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
 var green = document.createElement("img");
 green.src = "images/166863.gif";
+var blue = document.createElement("img");
+blue.src ="images/f4754c575b2a04079a771a8cc83e8bea.png";
 
 
 var enemyPath = [
@@ -79,6 +81,7 @@ var towerbutton={
 };
 
 function draw(){
+    ctx.drawImage(blue,0,0);
     ctx.drawImage(bgImg,0,0);
     if(clock%80==0){
         var newenemy= new Enemy();
