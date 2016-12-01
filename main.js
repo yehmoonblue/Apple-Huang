@@ -13,8 +13,6 @@ var crosshairImg = document.createElement("img");
 crosshairImg.src = "images/crosshair.png";
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
-var slime = document.createElement("img");
-slime.src = "images/slime.gif";
 var tower1 = document.createElement("img");
 tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
@@ -83,7 +81,6 @@ var towerbutton={
 
 function draw(){
     ctx.drawImage(bgImg,0,0);
-    ctx.drawImage(green,0,0,40,30);
     if(clock%80==0){
         var newenemy= new Enemy();
         enemies.push(newenemy);
@@ -98,7 +95,7 @@ function draw(){
             score+=10;
         }
         enemies[i].move();
-        ctx.drawImage(slime, enemies[i].x, enemies[i].y);
+        ctx.drawImage(green, enemies[i].x, enemies[i].y);
     }
     ctx.drawImage(tower1,towerbutton.x,towerbutton.y,towerbutton.width,towerbutton.height);
     if(isBuilding){
