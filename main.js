@@ -186,4 +186,6 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
         return false;
     }
 }
-setInterval(draw, 1000/FPS);
+var intervallD = setInterval(function(){
+    (draw, 1000/FPS)},3000);
+clearInterval(intervallD);
