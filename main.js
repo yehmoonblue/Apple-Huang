@@ -114,7 +114,7 @@ function draw(){
             ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
         }
     }
-    if(treehp===0){
+    if(treehp==0){
     gameover();
     }
     clock++;
