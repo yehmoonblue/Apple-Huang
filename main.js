@@ -112,6 +112,9 @@ function draw(){
             ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
         }
     }
+    if(treehp===0){
+    gameover();
+    }
     clock++;
 }
 
@@ -186,5 +189,15 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
         return false;
     }
 }
-setInterval(draw, 1000/FPS);
+
+function gameover(){
+    ctx.textAlign = "center";
+    ctx.font = "64px Arial";
+    ctx.fillText("Game Over~", canvas.width/2, canvas.height/2-96);
+    ctx.font = "48px Arial";
+    ctx.fillText("You got", canvas.width/2, canvas.height/2-32);
+    ctx.font = "128px Arial";
+    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
+    setInterval(intervalID);
+}
 
