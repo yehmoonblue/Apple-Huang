@@ -9,6 +9,8 @@ var money=25;
 var score=0;
 var enemies=[];
 var towers=[];
+var intervalID =setInterval(draw, 1000/FPS);
+
 var crosshairImg = document.createElement("img");
 crosshairImg.src = "images/crosshair.png";
 var bgImg = document.createElement("img");
