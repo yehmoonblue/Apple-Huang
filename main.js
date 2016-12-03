@@ -198,8 +198,6 @@ function gameover(){
     ctx.fillText("Game Over~", canvas.width/2, canvas.height/2-96);
     ctx.font = "48px Arial";
     ctx.fillText("You got", canvas.width/2, canvas.height/2-32);
-    ctx.font = "128px Arial";
-    ctx.fillText(score, canvas.width/2, canvas.height/2+96);
     setInterval(intervalID);
 }
 
