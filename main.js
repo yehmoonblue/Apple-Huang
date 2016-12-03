@@ -18,7 +18,7 @@ tower1.src = "images/tower-btn.png";
 var tower2 = document.createElement("img");
 tower2.src = "images/tower.png";
 var green = document.createElement("img");
-green.src = "images/01200000029101134392696855475_s.jpg";
+green.src = "images/166863.gif";
 var blue = document.createElement("img");
 blue.src ="images/f4754c575b2a04079a771a8cc83e8bea.png";
 
