@@ -82,7 +82,7 @@ var towerbutton={
 
 function draw(){
     ctx.drawImage(bgImg,0,0);
-    ctx.drawImage(blue,0,0,70,80);
+    ctx.drawImage(blue,0,0);
     if(clock%80==0){
         var newenemy= new Enemy();
         enemies.push(newenemy);
